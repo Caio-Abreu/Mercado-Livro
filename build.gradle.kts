@@ -3,6 +3,7 @@ plugins {
 	kotlin("plugin.spring") version "1.9.25"
 	id("org.springframework.boot") version "3.4.1"
 	id("io.spring.dependency-management") version "1.1.7"
+	jacoco
 }
 group = "com.mercadolivro"
 version = "0.0.1-SNAPSHOT"
@@ -34,7 +35,10 @@ dependencies {
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 
 	runtimeOnly("mysql:mysql-connector-java:8.0.32")
+
+	testImplementation("io.mockk:mockk:1.12.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.security:spring-security-test:6.1.0")
 }
 
 kotlin {
